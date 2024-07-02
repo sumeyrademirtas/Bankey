@@ -29,14 +29,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         onboardingContainerViewController.delegate = self
         dummyViewController.logoutDelegate = self
         window?.backgroundColor = .systemBackground
-        window?.rootViewController = mainViewController
+        window?.rootViewController = AccountSummaryViewController()
+//        window?.rootViewController = mainViewController
         // window?.rootViewController = onboardingContainerViewController
         //window?.rootViewController = loginViewController
         // window?.rootViewController = LoginViewController()
         // window?.rootViewController = OnboardingContainerViewController()
         // window?.rootViewController = OnboardingViewController(heroImageName: "delorean", titleText: "Bankey is faster, easier to use, and has a brand new look and feel that will make you feel like you are back in the 80s.")
         
-        mainViewController.selectedIndex = 2
+        mainViewController.selectedIndex = 0
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
