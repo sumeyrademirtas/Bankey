@@ -17,6 +17,8 @@
 		81D8EF982C31857100919709 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D8EF972C31857100919709 /* OnboardingViewController.swift */; };
 		81D8EF9A2C32B29800919709 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D8EF992C32B29800919709 /* DummyViewController.swift */; };
 		81D8EF9D2C32D20F00919709 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D8EF9C2C32D20F00919709 /* LocalState.swift */; };
+		81D8EF9F2C33D33F00919709 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D8EF9E2C33D33F00919709 /* UIViewController+Utils.swift */; };
+		81D8EFA12C33D88100919709 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D8EFA02C33D88100919709 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		81D8EF972C31857100919709 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		81D8EF992C32B29800919709 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		81D8EF9C2C32D20F00919709 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
+		81D8EF9E2C33D33F00919709 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
+		81D8EFA02C33D88100919709 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,11 +68,12 @@
 		81D8EF7B2C2C334F00919709 /* Bankey */ = {
 			isa = PBXGroup;
 			children = (
-				81D8EF9B2C32D1F200919709 /* Utils */,
-				81D8EF942C31630F00919709 /* Onboarding */,
-				81D8EF902C2C472200919709 /* Files */,
+				81D8EF7E2C2C334F00919709 /* SceneDelegate.swift */,
 				81D8EF912C2C476900919709 /* Login */,
-				81D8EF7C2C2C334F00919709 /* AppDelegate.swift */,
+				81D8EF942C31630F00919709 /* Onboarding */,
+				81D8EF9B2C32D1F200919709 /* Utils */,
+				81D8EF902C2C472200919709 /* Files */,
+				81D8EFA02C33D88100919709 /* MainViewController.swift */,
 			);
 			path = Bankey;
 			sourceTree = "<group>";
@@ -76,7 +81,7 @@
 		81D8EF902C2C472200919709 /* Files */ = {
 			isa = PBXGroup;
 			children = (
-				81D8EF7E2C2C334F00919709 /* SceneDelegate.swift */,
+				81D8EF7C2C2C334F00919709 /* AppDelegate.swift */,
 				81D8EF852C2C334F00919709 /* Assets.xcassets */,
 				81D8EF872C2C334F00919709 /* LaunchScreen.storyboard */,
 				81D8EF8A2C2C334F00919709 /* Info.plist */,
@@ -107,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				81D8EF9C2C32D20F00919709 /* LocalState.swift */,
+				81D8EF9E2C33D33F00919709 /* UIViewController+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -183,12 +189,14 @@
 			files = (
 				81D8EF9A2C32B29800919709 /* DummyViewController.swift in Sources */,
 				81D8EF812C2C334F00919709 /* LoginViewController.swift in Sources */,
+				81D8EF9F2C33D33F00919709 /* UIViewController+Utils.swift in Sources */,
 				81D8EF982C31857100919709 /* OnboardingViewController.swift in Sources */,
 				81D8EF7D2C2C334F00919709 /* AppDelegate.swift in Sources */,
 				81D8EF932C2C478E00919709 /* LoginView.swift in Sources */,
 				81D8EF962C3163C300919709 /* OnboardingContainerViewController.swift in Sources */,
 				81D8EF7F2C2C334F00919709 /* SceneDelegate.swift in Sources */,
 				81D8EF9D2C32D20F00919709 /* LocalState.swift in Sources */,
+				81D8EFA12C33D88100919709 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
