@@ -4,7 +4,7 @@
 //
 //  Created by Sümeyra Demirtaş on 2.07.2024.
 //
-
+import SwiftUI
 import UIKit
 
 class AccountSummaryHeaderView: UIView {
@@ -37,3 +37,5 @@ class AccountSummaryHeaderView: UIView {
         contentView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
 }
+
+
