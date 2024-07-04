@@ -23,6 +23,8 @@
 		81D8EFA62C34790600919709 /* AccountSummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D8EFA52C34790600919709 /* AccountSummaryHeaderView.swift */; };
 		81D8EFA82C34793400919709 /* AccountSummaryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81D8EFA72C34793400919709 /* AccountSummaryHeaderView.xib */; };
 		81D8EFAC2C357EDF00919709 /* AccountSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D8EFAB2C357EDF00919709 /* AccountSummaryCell.swift */; };
+		81D8EFAE2C36C75F00919709 /* DecimalUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D8EFAD2C36C75F00919709 /* DecimalUtils.swift */; };
+		81D8EFB02C36C7DB00919709 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D8EFAF2C36C7DB00919709 /* CurrencyFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		81D8EFA52C34790600919709 /* AccountSummaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryHeaderView.swift; sourceTree = "<group>"; };
 		81D8EFA72C34793400919709 /* AccountSummaryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSummaryHeaderView.xib; sourceTree = "<group>"; };
 		81D8EFAB2C357EDF00919709 /* AccountSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryCell.swift; sourceTree = "<group>"; };
+		81D8EFAD2C36C75F00919709 /* DecimalUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalUtils.swift; sourceTree = "<group>"; };
+		81D8EFAF2C36C7DB00919709 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,8 @@
 			children = (
 				81D8EF9C2C32D20F00919709 /* LocalState.swift */,
 				81D8EF9E2C33D33F00919709 /* UIViewController+Utils.swift */,
+				81D8EFAD2C36C75F00919709 /* DecimalUtils.swift */,
+				81D8EFAF2C36C7DB00919709 /* CurrencyFormatter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -228,9 +234,11 @@
 				81D8EFAC2C357EDF00919709 /* AccountSummaryCell.swift in Sources */,
 				81D8EF9A2C32B29800919709 /* DummyViewController.swift in Sources */,
 				81D8EF812C2C334F00919709 /* LoginViewController.swift in Sources */,
+				81D8EFB02C36C7DB00919709 /* CurrencyFormatter.swift in Sources */,
 				81D8EF9F2C33D33F00919709 /* UIViewController+Utils.swift in Sources */,
 				81D8EF982C31857100919709 /* OnboardingViewController.swift in Sources */,
 				81D8EF7D2C2C334F00919709 /* AppDelegate.swift in Sources */,
+				81D8EFAE2C36C75F00919709 /* DecimalUtils.swift in Sources */,
 				81D8EF932C2C478E00919709 /* LoginView.swift in Sources */,
 				81D8EF962C3163C300919709 /* OnboardingContainerViewController.swift in Sources */,
 				81D8EF7F2C2C334F00919709 /* SceneDelegate.swift in Sources */,
