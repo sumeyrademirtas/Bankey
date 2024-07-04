@@ -22,7 +22,7 @@ class AccountSummaryCell : UITableViewCell {
     let chevronImageView = UIImageView()
     
     static let reuseID = "AccountSummaryCell"
-    static let rowHeight: CGFloat = 100
+    static let rowHeight: CGFloat = 112
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -69,7 +69,8 @@ extension AccountSummaryCell {
         
         balanceAmountLabel.translatesAutoresizingMaskIntoConstraints = false
         balanceAmountLabel.textAlignment = .right
-        balanceAmountLabel.text = "$324,235.77"
+        balanceAmountLabel.attributedText = makeFormattedBalance(dollars: "929,466", cents: "23")
+//        balanceAmountLabel.text = "$324,235.77"
         
         
         chevronImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -90,17 +91,17 @@ extension AccountSummaryCell {
     }
     
     private func layout() {
-//        addSubview(stackView)
-//        stackView.addArrangedSubview(typeLabel)
-//        stackView.addArrangedSubview(underlineView)
-//        stackView.addArrangedSubview(nameLabel)
-//        
-//        NSLayoutConstraint.activate([
-//            stackView.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 1),
-//            stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 1),
-//            trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1),
-//            bottomAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 1)
-//        ])
+        //        addSubview(stackView)
+        //        stackView.addArrangedSubview(typeLabel)
+        //        stackView.addArrangedSubview(underlineView)
+        //        stackView.addArrangedSubview(nameLabel)
+        //
+        //        NSLayoutConstraint.activate([
+        //            stackView.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 1),
+        //            stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 1),
+        //            trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1),
+        //            bottomAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 1)
+        //        ])
         
         NSLayoutConstraint.activate([
             typeLabel.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 2),
@@ -113,9 +114,9 @@ extension AccountSummaryCell {
             underlineView.topAnchor.constraint(equalToSystemSpacingBelow: typeLabel.bottomAnchor, multiplier: 1),
             underlineView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
             underlineView.heightAnchor.constraint(equalToConstant: 4),
-            underlineView.widthAnchor.constraint(equalToConstant: 60)
-            ])
-
+            underlineView.widthAnchor.constraint(equalToConstant: 100)
+        ])
+        
         
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalToSystemSpacingBelow: underlineView.bottomAnchor, multiplier: 2),
@@ -134,4 +135,20 @@ extension AccountSummaryCell {
         ])
         
     }
+    
+    private func makeFormattedBalance(dollars: String, cents: String) -> NSMutableAttributedString {
+        let dollarSignAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .callout), .baselineOffset: 8]
+        let dollarAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .title1)]
+        let centAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .footnote), .baselineOffset: 8]
+        
+        let rootString = NSMutableAttributedString(string: "$", attributes: dollarSignAttributes)
+        let dollarString = NSAttributedString(string: dollars, attributes: dollarAttributes)
+        let centString = NSAttributedString(string: cents, attributes: centAttributes)
+        
+        rootString.append(dollarString)
+        rootString.append(centString)
+        
+        return rootString
+    }
+    
 }
