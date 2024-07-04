@@ -11,7 +11,6 @@ import UIKit
 class AccountSummaryCell : UITableViewCell {
     
     let typeLabel = UILabel()
-//    let stackView = UIStackView()
     let underlineView = UIView()
     let nameLabel = UILabel()
     
@@ -37,11 +36,7 @@ class AccountSummaryCell : UITableViewCell {
 
 extension AccountSummaryCell {
     private func setup() {
-        
-//        stackView.translatesAutoresizingMaskIntoConstraints = false
-//        stackView.axis = .vertical
-//        stackView.spacing = 8
-        
+     
         
         typeLabel.translatesAutoresizingMaskIntoConstraints = false
         typeLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
@@ -70,7 +65,6 @@ extension AccountSummaryCell {
         balanceAmountLabel.translatesAutoresizingMaskIntoConstraints = false
         balanceAmountLabel.textAlignment = .right
         balanceAmountLabel.attributedText = makeFormattedBalance(dollars: "929,466", cents: "23")
-//        balanceAmountLabel.text = "$324,235.77"
         
         
         chevronImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -91,25 +85,15 @@ extension AccountSummaryCell {
     }
     
     private func layout() {
-        //        addSubview(stackView)
-        //        stackView.addArrangedSubview(typeLabel)
-        //        stackView.addArrangedSubview(underlineView)
-        //        stackView.addArrangedSubview(nameLabel)
-        //
-        //        NSLayoutConstraint.activate([
-        //            stackView.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 1),
-        //            stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 1),
-        //            trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1),
-        //            bottomAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 1)
-        //        ])
         
+        //typeLabel
         NSLayoutConstraint.activate([
             typeLabel.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 2),
             typeLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
-            //trailingAnchor.constraint(equalToSystemSpacingAfter: typeLabel.trailingAnchor, multiplier: 1)
-            
         ])
         
+        
+        //underlineView
         NSLayoutConstraint.activate([
             underlineView.topAnchor.constraint(equalToSystemSpacingBelow: typeLabel.bottomAnchor, multiplier: 1),
             underlineView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
@@ -117,18 +101,20 @@ extension AccountSummaryCell {
             underlineView.widthAnchor.constraint(equalToConstant: 100)
         ])
         
-        
+        //nameLabel
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalToSystemSpacingBelow: underlineView.bottomAnchor, multiplier: 2),
             nameLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2)
         ])
         
+        //balanceStackView
         NSLayoutConstraint.activate([
             balanceStackView.topAnchor.constraint(equalToSystemSpacingBelow: underlineView.bottomAnchor, multiplier: 0),
             balanceStackView.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 4),
             trailingAnchor.constraint(equalToSystemSpacingAfter: balanceStackView.trailingAnchor, multiplier: 4)
         ])
         
+        //chevronImageView
         NSLayoutConstraint.activate([
             chevronImageView.topAnchor.constraint(equalToSystemSpacingBelow: underlineView.bottomAnchor, multiplier: 1),
             trailingAnchor.constraint(equalToSystemSpacingAfter: chevronImageView.trailingAnchor, multiplier: 1)
