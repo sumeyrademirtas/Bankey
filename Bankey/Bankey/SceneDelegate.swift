@@ -9,34 +9,42 @@ import UIKit
 
 let appColor: UIColor = .systemTeal
 
-
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    
-
-    
     var window: UIWindow?
     let loginViewController = LoginViewController()
-    let onboardingContainerViewController = OnboardingContainerViewController()
+    let onboardingViewController = OnboardingContainerViewController()
     let mainViewController = MainViewController()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
         window = UIWindow(windowScene: windowScene)
+        
+        //window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         loginViewController.delegate = self
-        onboardingContainerViewController.delegate = self
+        onboardingViewController.delegate = self
         
-        let vc = mainViewController
-        vc.setStatusBar()
         
+        displayLogin()
+    }
+
+    private func displayLogin() {
+        setRootViewController(loginViewController)
+    }
+
+    private func displayNextScreen() {
+        if LocalState.hasOnboarded {
+            prepMainView()
+            setRootViewController(mainViewController)
+        } else {
+            setRootViewController(onboardingViewController)
+        }
+    }
+
+    private func prepMainView() {
+        mainViewController.setStatusBar()
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().backgroundColor = appColor
-        
-        
-        window?.rootViewController = vc
-       
-     
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -66,30 +74,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-    
-  
 }
 
 extension SceneDelegate: LoginViewControllerDelegate {
     func didLogin() {
-        if LocalState.hasOnboarded {
-            setRootViewController(mainViewController)
-        } else {
-            setRootViewController(onboardingContainerViewController)
-        }
+        displayNextScreen()
     }
 }
 
 extension SceneDelegate: OnboardingContainerViewControllerDelegate {
     func didFinishOnboarding() {
         LocalState.hasOnboarded = true
+        prepMainView()
         setRootViewController(mainViewController)
     }
 }
 
 extension SceneDelegate: LogoutDelegate {
     func didLogout() {
-       setRootViewController(loginViewController)
+        setRootViewController(loginViewController)
     }
 }
 
@@ -104,7 +107,7 @@ extension SceneDelegate {
         window.rootViewController = vc
         window.makeKeyAndVisible()
         UIView.transition(with: window,
-                          duration: 0.5, 
+                          duration: 0.5,
                           options: .transitionCrossDissolve,
                           animations: nil,
                           completion: nil)
