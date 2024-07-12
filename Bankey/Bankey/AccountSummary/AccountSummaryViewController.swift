@@ -30,15 +30,7 @@ class AccountSummaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        setupNavigationBar()
-        //fetchAccounts()
-        fetchDataAndLoadViews()
     }
-    
-    func setupNavigationBar() {
-        navigationItem.rightBarButtonItem = logoutBarButtonItem
-    }
-    
     
 }
 
@@ -46,6 +38,8 @@ extension AccountSummaryViewController {
     private func setup() {
         setupTableView()
         setupTableHeaderView()
+        setupNavigationBar()
+        fetchData()
     }
     
     private func setupTableView() {
@@ -75,6 +69,10 @@ extension AccountSummaryViewController {
         headerView.frame.size = size
         
         tableView.tableHeaderView = headerView
+    }
+    
+    func setupNavigationBar() {
+        navigationItem.rightBarButtonItem = logoutBarButtonItem
     }
 }
 
@@ -111,7 +109,7 @@ extension AccountSummaryViewController {
 
 // MARK: - Networking
 extension AccountSummaryViewController {
-    private func fetchDataAndLoadViews() {
+    private func fetchData() {
         
         fetchProfile(forUserId: "1") { result in
             switch result {
