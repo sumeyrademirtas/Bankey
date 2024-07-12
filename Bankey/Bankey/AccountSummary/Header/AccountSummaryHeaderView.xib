@@ -11,6 +11,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AccountSummaryHeaderView" customModule="Bankey" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="f4R-zT-7ec"/>
+                <outlet property="dateLabel" destination="zK2-hu-2TO" id="b5d-WH-EOx"/>
+                <outlet property="namelLabel" destination="Q2J-av-4Sc" id="RrQ-WQ-F13"/>
+                <outlet property="welcomeLabel" destination="v92-gt-bP6" id="5o0-cp-MKq"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -22,28 +25,28 @@
                     <rect key="frame" x="16" y="16" width="338" height="112"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="E24-oW-XPe">
-                            <rect key="frame" x="0.0" y="0.0" width="113.33333333333333" height="112"/>
+                            <rect key="frame" x="0.0" y="0.0" width="256" height="112"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Bankey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUG-8W-wYc">
-                                    <rect key="frame" x="0.0" y="0.0" width="113.33333333333333" height="27"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="256" height="27"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Good morning," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v92-gt-bP6">
-                                    <rect key="frame" x="0.0" y="35" width="113.33333333333333" height="20.333333333333329"/>
+                                    <rect key="frame" x="0.0" y="35" width="256" height="20.333333333333329"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Sumeyra" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2J-av-4Sc">
-                                    <rect key="frame" x="0.0" y="63.333333333333336" width="113.33333333333333" height="20.333333333333336"/>
+                                    <rect key="frame" x="0.0" y="63.333333333333336" width="256" height="20.333333333333336"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zK2-hu-2TO">
-                                    <rect key="frame" x="0.0" y="91.666666666666671" width="113.33333333333333" height="20.333333333333329"/>
+                                    <rect key="frame" x="0.0" y="91.666666666666671" width="256" height="20.333333333333329"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -51,7 +54,7 @@
                             </subviews>
                         </stackView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.max.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7lF-VU-naK">
-                            <rect key="frame" x="117.33333333333336" y="0.0" width="220.66666666666663" height="100"/>
+                            <rect key="frame" x="260" y="0.0" width="78" height="100"/>
                             <color key="tintColor" systemColor="systemYellowColor"/>
                             <constraints>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="hbh-1W-uX2"/>
