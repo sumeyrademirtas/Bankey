@@ -151,7 +151,6 @@ extension AccountSummaryViewController {
             switch result {
             case .success(let profile):
                 self.profile = profile
-                self.configureTableHeaderView(with: profile)
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -163,7 +162,6 @@ extension AccountSummaryViewController {
             switch result {
             case .success(let accounts):
                 self.accounts = accounts
-                self.configureTableCells(with: accounts)
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -171,9 +169,14 @@ extension AccountSummaryViewController {
         }
         
         group.notify(queue: .main) {
-            self.isLoaded = true
-            self.tableView.reloadData()
             self.tableView.refreshControl?.endRefreshing()
+
+            guard let profile = self.profile else { return }
+            
+            self.isLoaded = true
+            self.configureTableHeaderView(with: profile)
+            self.configureTableCells(with: self.accounts)
+            self.tableView.reloadData()
         }
 
         
@@ -201,7 +204,18 @@ extension AccountSummaryViewController {
         NotificationCenter.default.post(name: .logout, object: nil)
     }
     
+
+    
     @objc func refreshContent() {
+        reset()
+        setupSkeletons()
+        tableView.reloadData()
         fetchData()
+    }
+    
+    private func reset() {
+        profile = nil
+        accounts = []
+        isLoaded = false
     }
 }
